@@ -1,22 +1,17 @@
-import java.util.Scanner;
-
 public class HelloGoodbye {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Check that exactly two command-line arguments are provided
+        if (args.length != 2) {
+            System.out.println("Please provide exactly two names as command-line arguments.");
+            return;
+        }
 
-        System.out.print("Enter your name 1: ");
-        String name1 = scanner.nextLine(); // Read a line of text
+        // Retrieve names from command-line arguments
+        String name1 = args[0];
+        String name2 = args[1];
 
-
-        System.out.print("Enter your name 2: ");
-        String name2 = scanner.nextLine(); // Read a line of text
-
-   
-
-        System.out.println("Hello " + name1 +" and "+ name2);
-        System.out.println("Goodbye " + name2 +" and "+ name1);
-
-        // Close the scanner
-        scanner.close();
+        // Print hello and goodbye messages
+        System.out.println("Hello " + name1 + " and " + name2+".");
+        System.out.println("Goodbye " + name2 + " and " + name1+".");
     }
 }
